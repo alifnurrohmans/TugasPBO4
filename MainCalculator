@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class MainCalculator {
+    public static void jalankanCalculator() {
+        Calculator calculator = new Calculator();
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter 1 for +");
+        System.out.println("Enter 2 for -");
+        System.out.println("enter 3 for x");
+        System.out.println("Enter 4 for /");
+        int operator = sc.nextInt();
+        System.out.println("Enter two numbers");
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        
+        double result;
+        
+        // Melakukan operasi berdasarkan input operator
+        switch (operator) {
+            case 1:
+                result = calculator.add(num1, num2);
+                break;
+            case 2:
+                result = calculator.subtract(num1, num2);
+                break;
+            case 3:
+                result = calculator.multiply(num1, num2);
+                break;
+            case 4:
+                result = calculator.divide(num1, num2);
+                break;
+            default:
+                System.out.println("Invalid operator!");
+                return;
+        }
+
+        // Menampilkan hasil perhitungan
+        System.out.println("The result is: " + result);
+    }
+}
+
